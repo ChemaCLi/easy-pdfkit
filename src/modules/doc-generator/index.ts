@@ -1,16 +1,18 @@
-import PDFDocument from "pdfkit";
 import fs from "fs";
+import PDFDocument from "pdfkit";
+import { DocGeneratorOptions } from "../../types";
 
 export class DocGenerator {
-  private writeStream
+  private writeStream: fs.WriteStream
+  private globalOptions: DocGeneratorOptions
 
-  constructor(options: any, writeStream: fs.WriteStream) {
-    console.log({ options });
+  constructor(writeStream: fs.WriteStream, options?: DocGeneratorOptions) {
     this.writeStream = writeStream;
+    this.globalOptions = options;
   }
 
   public generate = (content: any) => {
-    console.log({ content });
+    console.log({ content, options: this.globalOptions });
     // Create a document
     const doc = new PDFDocument();
 

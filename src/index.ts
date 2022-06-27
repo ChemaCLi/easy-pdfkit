@@ -2,8 +2,8 @@ import fs from "fs";
 import { DocGenerator } from "./modules";
 
 const docGenerator = new DocGenerator(
-  { margin: 10, font: { size: 20 } },
-  fs.createWriteStream('output.pdf')
+  fs.createWriteStream('output.pdf'),
+  { margin: 10, font: { size: 20 } }
 );
 
 docGenerator.generate([
