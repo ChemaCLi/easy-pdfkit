@@ -1,12 +1,12 @@
 import fs from "fs";
 import PDFDocument from "pdfkit";
-import { DocGeneratorOptions } from "../../types";
+import { PageOptions } from "../../types";
 
 export class DocGenerator {
   private writeStream: fs.WriteStream
-  private globalOptions: DocGeneratorOptions
+  private globalOptions: PageOptions
 
-  constructor(writeStream: fs.WriteStream, options?: DocGeneratorOptions) {
+  constructor(writeStream: fs.WriteStream, options?: PageOptions) {
     this.writeStream = writeStream;
     this.globalOptions = options;
   }

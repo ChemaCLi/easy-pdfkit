@@ -1,7 +1,11 @@
-export interface DocGeneratorOptions {
+type PageSize = "A4"
+export interface PageOptions {
   margin?: number | [number, number] | [number, number, number, number]
   font?: DocGeneratorOptionsFont
-  color?: string
+  fontColor?: string
+  pageSize?: PageSize
+  header?: object
+  footer?: object
 }
 
 interface DocGeneratorOptionsFont {
