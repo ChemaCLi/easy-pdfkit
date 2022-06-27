@@ -1,6 +1,6 @@
 import fs from "fs";
 import PDFDocument from "pdfkit";
-import { PageOptions } from "../../types";
+import { Content, PageOptions } from "../../types";
 
 export class DocGenerator {
   private writeStream: fs.WriteStream
@@ -11,8 +11,8 @@ export class DocGenerator {
     this.globalOptions = options;
   }
 
-  public generate = (content: any) => {
-    console.log({ content, options: this.globalOptions });
+  public generate = (contents: Content[]) => {
+    console.log({ contents, options: this.globalOptions });
     // Create a document
     const doc = new PDFDocument();
 
