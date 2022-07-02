@@ -9,12 +9,11 @@ const docGenerator = new DocGenerator(
 docGenerator.generate([
   {
     mode: "content-blocks",
-    content: []
-  },
-  {
-    mode: "pages",
-    pages: [
-      {}
+    content: [
+      {
+        type: "paragraph",
+        text: "asda nlk as ndansdas dasdasd"
+      }
     ]
   }
 ]);
