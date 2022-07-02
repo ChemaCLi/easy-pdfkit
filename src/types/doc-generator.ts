@@ -1,13 +1,19 @@
 type PageSize = "A4"
 export interface PageOptions {
+  orientation?: "portrait" | "landscape"
   margin?: number | [number, number] | [number, number, number, number]
-  font?: DocGeneratorOptionsFont
-  fontColor?: string
+  fontConfig?: DocGeneratorOptionsFont
   pageSize?: PageSize
   header?: object
   footer?: object
 }
 
-interface DocGeneratorOptionsFont {
-  size?: 20
+type DocGeneratorOptionsFont = {
+  h1?: FontProperties
+} & FontProperties
+
+type FontProperties = {
+  size?: number
+  color?: string
+  font?: string
 }
