@@ -3,7 +3,13 @@ import { DocGenerator } from "./modules";
 
 const docGenerator = new DocGenerator(
   fs.createWriteStream('output.pdf'),
-  { margin: 10, font: { size: 20 } }
+  {
+    margin: [30, 40],
+    fontConfig: {
+      size: 50,
+      font: "Courier"
+    }
+  }
 );
 
 docGenerator.generate([
@@ -13,6 +19,15 @@ docGenerator.generate([
       {
         type: "paragraph",
         text: "asda nlk as ndansdas dasdasd"
+      }
+    ]
+  },
+  {
+    mode: "pages",
+    pages: [
+      {
+        config: {},
+        content: []
       }
     ]
   }
